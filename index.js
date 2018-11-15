@@ -1,5 +1,4 @@
-var fs = require('fs');
-var fsExtra = require('fs-extra');
+var fs = require('fs-extra');
 var mv = require('mv');
 var request = require('request');
 var extract = require('extract-zip')
@@ -97,7 +96,7 @@ request({
         download(body2.link, zipDownloadPath, function (errorMessage) {
 
             var cleanup = function () {
-                fsExtra.remove(tempFolder);
+                fs.remove(tempFolder);
             }
 
             if (errorMessage) {
